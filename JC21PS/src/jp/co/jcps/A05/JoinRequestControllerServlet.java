@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.jcps.Common.CommonCheck;
 import jp.co.jcps.Common.DBConnection;
@@ -44,7 +45,8 @@ public class JoinRequestControllerServlet extends HttpServlet {
 		 *  ヒント
 		 *  セッションには「userId」という名前でログインユーザーIDが格納されている。
 		 */
-		String userId = ;
+		HttpSession session = request.getSession(false);
+		String userId = (String) session.getAttribute("leaderClubId");
 
 		// SQLを宣言
 		String sql = "SELECT * FROM mst_club WHERE club_id NOT IN (SELECT club_id FROM trn_join_request WHERE user_id = ?) AND club_id NOT IN (SELECT club_id FROM trn_club_member WHERE user_id = ?);";
@@ -57,6 +59,12 @@ public class JoinRequestControllerServlet extends HttpServlet {
 		 *  ヒント②
 		 *  ログインユーザーの情報を使う。
 		 */
+		paramList.add(userId);
+		paramList.add(userId);
+
+
+
+
 
 
 
