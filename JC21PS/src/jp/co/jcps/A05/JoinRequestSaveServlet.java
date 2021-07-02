@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.jcps.Bean.MessageBean;
 import jp.co.jcps.Common.CommonCheck;
@@ -43,7 +44,7 @@ public class JoinRequestSaveServlet extends HttpServlet {
 
 
 		// TODO: データベースにデータを登録する為のSQL文を完成させなさい。
-		String sql = "INSERT INTO";
+		String sql = "INSERT INTO trn_joinrequest(user_id,club_id) VALUES (?,?);";
 
 		// SQLに埋め込むパラメータリストを定義
 		List<String> paramList = new ArrayList<String>();
@@ -56,6 +57,11 @@ public class JoinRequestSaveServlet extends HttpServlet {
 		 * リクエストパラメータの取得のrequest.getParameter(【HTMLのname属性の値】)で取得可能
 		 * A04,ParticipantListControllerServlet.java 43行目を参照
 		 */
+		HttpSession session = request.getSession(false);
+		String userId = (String)session.getAttribute("userId");
+		String clubId = request.getParameter("registClubId");
+		paramList.add(userId);
+		paramList.add(clubId);
 
 
 
