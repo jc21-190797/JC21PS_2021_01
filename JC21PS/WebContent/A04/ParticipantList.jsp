@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class="container"></div>
-  <h2 class="teacher-header">活動登録</h2>
+  <h2 class="teacher-header" >参加者一覧</h2>
   <jsp:include page="/A00/Header.jsp"></jsp:include>
 
   <%
@@ -52,8 +52,9 @@
  			ヒント
  			Listの要素はget(【番号】)で取得することができる。
  			 --%>
+
   			<tr>
- 				<td>get.</td>
+ 				<td><%= bean.getParticipantList().get(i) %></td>
  			<tr>
   		<% } %>
   		</tbody>

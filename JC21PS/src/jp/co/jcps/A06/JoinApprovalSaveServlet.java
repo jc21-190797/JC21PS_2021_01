@@ -74,7 +74,7 @@ public class JoinApprovalSaveServlet extends HttpServlet {
 
 		//SQLを宣言
 		// TODO: SQL文を完成させなさい。
-		String sql = "INSERT INTO trn_club_member (club_id,user_id) values (?,?) ";
+		String sql = "INSERT INTO trn_club_member(club_id,user_id) values ('?','?') ";
 
 		// SQLに埋め込むパラメータリストを定義
 		List<String> paramList = new ArrayList<String>();
