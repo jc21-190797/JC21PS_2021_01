@@ -109,3 +109,4 @@ public class JoinApprovalSaveServlet extends HttpServlet {
 		db.executeInsertUpdateQuery(sql, paramList);
 	}
 }
+

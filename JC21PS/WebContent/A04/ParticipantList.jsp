@@ -38,6 +38,7 @@
   		<tr>
   			<td><%= bean.getActivityName() %></td>
   		</tr>
+
   		<tr>
   			<th>参加者一覧</th>
   		</tr>
