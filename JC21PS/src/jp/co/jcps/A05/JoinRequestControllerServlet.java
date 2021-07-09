@@ -46,7 +46,8 @@ public class JoinRequestControllerServlet extends HttpServlet {
 		 *  セッションには「userId」という名前でログインユーザーIDが格納されている。
 		 */
 		HttpSession session = request.getSession(false);
-		String userId = (String) session.getAttribute("leaderClubId");
+//		String userId = (String) session.getAttribute("leaderClubId");
+		String userId = (String) session.getAttribute("userId");
 
 		// SQLを宣言
 		String sql = "SELECT * FROM mst_club WHERE club_id NOT IN (SELECT club_id FROM trn_join_request WHERE user_id = ?) AND club_id NOT IN (SELECT club_id FROM trn_club_member WHERE user_id = ?);";
@@ -61,12 +62,6 @@ public class JoinRequestControllerServlet extends HttpServlet {
 		 */
 		paramList.add(userId);
 		paramList.add(userId);
-
-
-
-
-
-
 
 
 		// DB接続を初期化
