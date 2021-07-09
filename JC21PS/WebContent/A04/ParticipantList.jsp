@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class="container"></div>
-  <h2 class="teacher-header">活動登録</h2>
+  <h2 class="teacher-header" >参加者一覧</h2>
   <jsp:include page="/A00/Header.jsp"></jsp:include>
 
   <%
@@ -46,14 +46,15 @@
   		ヒント
   		size()メソッドでListの要素数を取得することができる
   		 --%>
-  		<%  for() {  %>
+  		<%  for(int i=0;i<bean.getParticipantList().size();i++) {  %>
   			<%--TODO
  			参加者名の一覧が表示されるように実装しなさい。
  			ヒント
  			Listの要素はget(【番号】)で取得することができる。
  			 --%>
+
   			<tr>
- 				<td></td>
+ 				<td><%= bean.getParticipantList().get(i) %></td>
  			<tr>
   		<% } %>
   		</tbody>
