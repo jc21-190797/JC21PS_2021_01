@@ -91,4 +91,3 @@ public class JoinApprovalControllerServlet extends HttpServlet {
 		doGet(request, response);
 	}
 }
-
