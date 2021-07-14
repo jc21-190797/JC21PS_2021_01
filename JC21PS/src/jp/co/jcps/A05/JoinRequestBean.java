@@ -19,7 +19,7 @@ public class JoinRequestBean implements Serializable {
 	private List<String> clubDescriptionList = new ArrayList<>();
 
 	/**
-	 * コンストラクタ
+	 * コンストラクタ...
 	 *
 	 */
 	public JoinRequestBean() {
